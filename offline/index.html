@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Offline - Happy Graduation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #6A1B9A;      /* สีม่วงเข้ม */
+            --primary-light: #9C27B0;      /* สีม่วงสว่าง */
+            --secondary-color: #FFD600;    /* สีเหลือง/ทอง */
+            --bg-gradient: linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%); /* พื้นหลังชมพู-ม่วงพาสเทล */
+            --text-main: #333333;
+            --text-sub: #666666;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            height: 100vh;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        /* ตกแต่งพื้นหลังสไตล์น่ารัก */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            z-index: 1;
+            animation: float-blob 8s ease-in-out infinite alternate;
+        }
+        
+        .shape-1 {
+            width: 350px; height: 350px;
+            background: rgba(255, 214, 0, 0.25);
+            top: -100px; right: -50px;
+        }
+        
+        .shape-2 {
+            width: 250px; height: 250px;
+            background: rgba(106, 27, 154, 0.15);
+            bottom: -50px; left: -80px;
+            animation-delay: -4s;
+        }
+
+        .shape-3 {
+            width: 150px; height: 150px;
+            background: rgba(255, 255, 255, 0.4);
+            top: 20%; left: 15%;
+            animation-duration: 6s;
+        }
+
+        /* กล่องการ์ดเนื้อหา */
+        .grad-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(106, 27, 154, 0.15);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* วงกลมไอคอนด้านบนการ์ด */
+        .icon-box {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -110px auto 20px;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            animation: float-cap 3s ease-in-out infinite;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        p {
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* ปุ่มกด */
+        .btn-home {
+            background-color: var(--primary-light);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-home:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(106, 27, 154, 0.4);
+        }
+
+        /* ดาววิบวับรอบๆ การ์ด */
+        .sparkle {
+            position: absolute;
+            animation: twinkle 2s infinite alternate;
+        }
+        .sp-1 { top: -20px; right: -20px; width: 40px; animation-delay: 0s; }
+        .sp-2 { top: 50px; left: -30px; width: 30px; animation-delay: 1s; }
+        .sp-3 { bottom: 40px; right: -25px; width: 35px; animation-delay: 0.5s; }
+
+        /* Animations */
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(50px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes float-blob {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(30px) scale(1.05); }
+        }
+
+        @keyframes float-cap {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(255, 214, 0, 0.6)); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="grad-card">
+        <svg class="sparkle sp-1" viewBox="0 0 24 24" fill="#FFD600"><path d="M12 1L14.5 8.5L22 11L14.5 13.5L12 21L9.5 13.5L2 11L9.5 8.5L12 1Z"/></svg>
+        <svg class="sparkle sp-2" viewBox="0 0 24 24" fill="#FFD600"><path d="M12 1L14.5 8.5L22 11L14.5 13.5L12 21L9.5 13.5L2 11L9.5 8.5L12 1Z"/></svg>
+        <svg class="sparkle sp-3" viewBox="0 0 24 24" fill="#9C27B0"><path d="M12 1L14.5 8.5L22 11L14.5 13.5L12 21L9.5 13.5L2 11L9.5 8.5L12 1Z"/></svg>
+
+        <div class="icon-box">
+            <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 45L50 25L90 45L50 65L10 45Z" fill="#6A1B9A"/>
+                <path d="M90 45L50 65L10 45L50 50L90 45Z" fill="#4A148C"/>
+                <path d="M25 52V70C25 81.0457 36.1929 90 50 90C63.8071 90 75 81.0457 75 70V52" fill="#9C27B0"/>
+                <path d="M50 45L80 60" stroke="#FFD600" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="50" cy="45" r="5" fill="#FFD600"/>
+                <path d="M76 60L84 60L82 75L78 75L76 60Z" fill="#FFD600"/>
+            </svg>
+        </div>
+
+        <h1>System Offline</h1>
+        <div class="subtitle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD600">
+                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"/>
+            </svg>
+            สำเร็จการศึกษา
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD600">
+                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"/>
+            </svg>
+        </div>
+
+        <p>
+            ปิดให้บริการระบบอย่างเป็นทางการ<br>
+            ขอบคุณสำหรับทุกความทรงจำดีๆ ที่ผ่านมา<br>
+            ขอให้ทุกคนโชคดี เติบโตอย่างแข็งแกร่งและงดงาม<br>
+            ในเส้นทางที่ทุกคนเลือกเดินต่อไปนะ!
+        </p>
+
+        
+        
+        <div class="mt-4 text-muted" style="margin-top: 25px; font-size: 0.85rem; color: #999;">
+            &copy; 2026 TUBHOK, Muangsuratthani School.
+        </div>
+    </div>
+
+</body>
+</html>
